@@ -1,9 +1,9 @@
-app.controller('admin', function($scope, $http) {
+app.controller('results', function($scope, $http) {
 
   //get data from "backend"
-   $http.get('data/election-array.json').
+   $http.get('data/results-data.json').
 	  then(function onSuccess(response) {
-	     $scope.elections = response.data;
+	     $scope.results = response.data;
 	     console.log($scope.elections);
 	  }).
 	  catch(function onError(response) {

@@ -85,6 +85,18 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
+.question {
+  margin: 10px 0px;
+}
+.footer-container {
+  padding-top:20px; 
+}
+.question-rank {
+  margin: 5px 0px;
+}
+.side-summary {
+  padding: 15px;
+}
 /*
  * Utilities
  */
