@@ -1,0 +1,135 @@
+{
+	"title"			: "Spice Girls",
+	"description"	: "A national examination at an international sensation",
+	"id"			: "001",
+	"ballot" 		:  [
+		{
+			"question"		: "Coolest Spice Girl",
+			"id"			: "001",
+			"type"			: "rank",
+			"tagline"		: "Rank spice girls in order of coolness, the coolest being ranked 1.",
+			"description"	: "Ranked choice voting",
+			"write"			: false,
+			"max"			: false,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: null
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: null
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: null
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: null
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: null
+				}
+			]
+		},
+		{
+			"question"		: "Most talented",
+			"id"			: "002",
+			"type"			: "1",
+			"tagline"		: "Select the most talented spice girl",
+			"description"	: "Select 1",
+			"write"			: false,
+			"max"			: 1,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: false
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: false
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: false
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: false
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: false
+				}
+			]
+		},
+		{
+			"question"		: "Most fashionable",
+			"id"			: "003",
+			"type"			: "n",
+			"tagline"		: "Select any spice girl you think had a fashionable look",
+			"description"	: "Select any number",
+			"write"			: false,
+			"max"			: false,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: false
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: false
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: false
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: false
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: false
+				}
+			]
+		},
+		{
+			"question"		: "Most likely to become vegan",
+			"id"			: "004",
+			"type"			: "2",
+			"tagline"		: "Select 2 spice girls you think would become vegans",
+			"description"	: "Select 2",
+			"write"			: false,
+			"max"			: 2,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: false
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: false
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: false
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: false
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="voteApp">
+  <head>
+    <title>Simple Voting App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/libs/bootstrap.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="assets/vote.css">
+  </head>
+
+  <body ng-controller="vote" ng-init="init('001', '001')">
+
+    <div header-vote></div>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+    <h2>{{election.title}}: {{election.description}}</h2>
+      <div class="card question" ng-repeat="question in election.ballot">
+          <h4 class="card-header">{{question.question}}</h4>
+          <div class="card-body">
+              <p><i>{{question.description}}</i> <br/>{{question.tagline}}</p>
+                <div ng-repeat="answer in question.answers">
+                  <div ballot-question></div>
+                </div>
+          </div> <!-- end card body -->
+      </div> <!-- end question-->
+      <div ballot-summary></div>
+    </main>
+
+    <div footer-vote></div>
+    <!-- AngularJS -->
+    <script src="assets/libs/angular.min.js"></script>
+    <script src="assets/libs/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/vote/controller-vote.js"></script>
+    <script src="app/shared/directives.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<h4>Polls</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Poll</th>
+      <th scope="col">Type</th>
+      <th scope="col">Options</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="question in election.ballot">
+      <th scope="row">{{$index+1}}</th>
+      <td>{{question.question}} (<i>{{question.description}}</i>)<br/>{{question.tagline}}</td>
+      <td>{{question.type.toUpperCase()}}</td>
+      <td><span ng-repeat="answer in question.answers"><br ng-if="!$first"/>{{answer.name}}</span></td>
+      <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+    </tr>
+  </tbody>
+</table>

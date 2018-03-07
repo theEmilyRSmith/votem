@@ -1,0 +1,22 @@
+<!-- Question type is rank -->
+<div ng-if="question.type == 'rank'">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary" ng-class="{active : (answer.value == null)}">
+      <input type="radio" name="options" autocomplete="off" ng-click="answer.value = null">None
+    </label>
+    <label class="btn btn-secondary" ng-repeat="i in rankOptions(question.answers.length)" ng-class="{active : (i == answer.value)}">
+      <input type="radio" name="options" autocomplete="off" ng-click="answer.value = i">{{i}}
+    </label>
+  </div>
+      <label for="{{answer.name}}">{{answer.name}}</label>
+</div>
+<!-- END -->
+
+<!-- Question type is select n -->
+<div class="form-check" ng-if="question.type != 'rank'">
+  <input class="form-check-input" type="checkbox"  id="{{answer.name}}" ng-change="updateCount(question, answer.value)" ng-model="answer.value" ng-disabled="(question.count >= question.max) && answer.value != true && question.max != false"/>
+  <label class="form-check-label" for="defaultCheck1">
+    {{answer.name}}
+  </label>
+</div>
+<!-- END -->

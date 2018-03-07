@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="voteApp">
+  <head>
+    <title>Simple Voting App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/libs/bootstrap.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="assets/admin.css">
+
+  </head>
+  <body ng-controller="admin">
+    <div header-admin></div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <h1 class="h2">Manage Elections</h1>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Question</th>
+                  <th scope="col">Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="election in elections">
+                  <th scope="row">{{$index}}</th>
+                  <td>{{election.title}}</td>
+                  <td>{{election.ballots.length}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </main>
+    <div footer-admin></div>
+
+    <!-- AngularJS -->
+    <script src="assets/libs/angular.min.js"></script>
+    <script src="assets/libs/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/admin/controller-admin.js"></script>
+    <script src="app/shared/directives.js"></script>
+  </body>
+</html>

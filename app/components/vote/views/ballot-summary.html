@@ -1,0 +1,7 @@
+<h3>Review selections</h3>
+<div ng-repeat="question in ballot.questions">
+<h5>{{question.question}}</h5>
+  <div ng-repeat="answer in question.answers" ng-if="answer.value">
+        {{answer.name}}, {{answer.value}}
+    </div>
+</div>
