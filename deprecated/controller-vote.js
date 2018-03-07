@@ -1,16 +1,13 @@
 app.controller('vote', function($scope, $http, $filter) {
-  $scope.questionIndex = 0;
-    $scope.init = function(election, ballot){
-      //get data from "backend"
-       $http.get('data/election-data.json').
-        then(function onSuccess(response) {
-          $scope.election = response.data;
-        }).
-        catch(function onError(response) {
-         console.log(response);
-        });
 
-    };
+  //get data from "backend"
+   $http.get('data/election-data.json').
+    then(function onSuccess(response) {
+      $scope.election = response.data;
+    }).
+    catch(function onError(response) {
+     console.log(response);
+    });
 
     //helper functions
     $scope.updateCount= function(question,value) {

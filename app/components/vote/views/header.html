@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Simple Voting App</a>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="home.html">Simple Voting App</a>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="#">Sign out</a>
@@ -12,15 +12,17 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  Home <span class="sr-only">(current)</span>
+                <a class="nav-link active" href="home.html">
+                  Home
                 </a>
               </li>
             </ul>
-            <div class="side-summary">
+            <div ng-if="election.ballot" class="side-summary">
               <div ballot-summary></div>
               <hr/>
               <button type="button" class="btn btn-primary">Submit Ballot</button>
             </div>
           </div>
         </nav>
+    </div>
+</div>

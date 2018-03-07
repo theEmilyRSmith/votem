@@ -1,4 +1,4 @@
-app.controller('results', function($scope, $http) {
+app.controller('election', function($scope, $http) {
 
   //get data from "backend"
    $http.get('data/results-data.json').

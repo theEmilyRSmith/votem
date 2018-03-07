@@ -33,6 +33,11 @@ app.directive('addPoll', function() {
       templateUrl: 'app/components/admin/views/add-poll.html'
     };
 });
+app.directive('createElection', function() {
+    return { 
+      templateUrl: 'app/components/admin/views/create-election.html'
+    };
+});
 app.directive('pollTable', function() {
     return { 
       templateUrl: 'app/components/admin/views/poll-table.html'

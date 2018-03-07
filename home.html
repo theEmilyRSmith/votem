@@ -1,0 +1,23 @@
+<div header-vote></div>
+  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <h2>Current Elections</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th/>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="election in elections">
+            <th scope="row">{{$index+1}}</th>
+            <td>{{election.title}}</td>
+            <td>{{election.description}}</td>
+            <td class="text-right"><a class="btn btn-outline-primary" role="button" href="#!vote/{{election.id}}">Vote</a></td>
+          </tr>
+        </tbody>
+      </table>
+  </main>
+<div footer-vote></div>

@@ -1,4 +1,3 @@
-<h4>Polls</h4>
 <table class="table">
   <thead>
     <tr>
@@ -15,7 +14,7 @@
       <td>{{question.question}} (<i>{{question.description}}</i>)<br/>{{question.tagline}}</td>
       <td>{{question.type.toUpperCase()}}</td>
       <td><span ng-repeat="answer in question.answers"><br ng-if="!$first"/>{{answer.name}}</span></td>
-      <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
+      <td class="text-right"><a class="btn btn-outline-primary" role="button" href="#!edit/{{election.id}}/poll/{{question.id}}">Edit</a></td>
     </tr>
   </tbody>
 </table>
