@@ -2,6 +2,6 @@
 <div ng-repeat="question in election.ballot">
 <b>{{question.question}}</b>
   <div ng-repeat="answer in question.answers" ng-if="answer.value">
-        {{answer.name}}, {{answer.value}}
+        {{answer.name}}<span ng-if="answer.value != true">, {{answer.value}}</span>
     </div>
 </div>

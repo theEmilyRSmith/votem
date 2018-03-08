@@ -1,10 +1,10 @@
 <!-- Question type is rank -->
 <div ng-if="question.type == 'rank'">
   <div class="btn-group btn-group-toggle question-rank" data-toggle="buttons">
-    <label class="btn btn-secondary" ng-class="{active : (answer.value == null)}">
+    <label class="btn btn-primary" ng-class="{'btn-primary': (answer.value == null), 'btn-secondary': (answer.value != null)}">
       <input type="radio" name="options" autocomplete="off" ng-click="answer.value = null">None
     </label>
-    <label class="btn btn-secondary" ng-repeat="i in rankOptions(question.answers.length)" ng-class="{active : (i == answer.value)}">
+    <label class="btn btn-secondary" ng-repeat="i in rankOptions(question)" ng-class="{'btn-primary': (i == answer.value), 'btn-secondary': (i != answer.value)}">
       <input type="radio" name="options" autocomplete="off" ng-click="answer.value = i">{{i}}
     </label>
   </div>

@@ -1,0 +1,79 @@
+{
+	"title"			: "National Rescue Dog Society",
+	"description"	: "The best and the cutest",
+	"id"			: "004",
+	"ballot" 		:  [
+		{
+			"question"		: "Are rescue dogs the best dogs?",
+			"id"			: "010",
+			"type"			: "1",
+			"tagline"		: "",
+			"description"	: "Select 1",
+			"write"			: false,
+			"max"			: false,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Yes",
+					"value"	: false
+				},
+				{
+					"name" 		: "No",
+					"value"	: false
+				}
+			]
+		},
+		{
+			"question"		: "How awesome are resuce dogs?",
+			"id"			: "011",
+			"type"			: "1",
+			"tagline"		: "On a scale of 1 to 10, 1 being the best, how awesome are rescue dogs?",
+			"description"	: "Select 1",
+			"write"			: false,
+			"max"			: 1,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "1",
+					"value"	: false
+				},
+				{
+					"name" 		: "2",
+					"value"	: false
+				},
+				{
+					"name" 		: "3",
+					"value"	: false
+				},
+				{
+					"name" 		: "4",
+					"value"	: false
+				},
+				{
+					"name" 		: "5",
+					"value"	: false
+				},
+				{
+					"name" 		: "6",
+					"value"	: false
+				},
+				{
+					"name" 		: "7",
+					"value"	: false
+				},
+				{
+					"name" 		: "9",
+					"value"	: false
+				},
+				{
+					"name" 		: "9",
+					"value"	: false
+				},
+				{
+					"name" 		: "10",
+					"value"	: false
+				}
+			]
+		}
+	]
+}

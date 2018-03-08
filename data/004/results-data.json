@@ -1,0 +1,122 @@
+{
+	"election"		: {
+			"id"		: "001",
+			"title"		: "Spice Girls"
+		},
+	"ballot"		: "001",
+	"results" 		: [
+		{
+			"question"		: {
+				"id"		: "001",
+				"title"		: "Coolest Spice Girl"
+				},
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: 1
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: 2
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: 4
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: 3
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: 5
+				}
+			]
+		},
+		{
+			"question"		: {
+				"id"		: "002",
+				"title"		: "Most talented"
+				},
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: 20
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: 7
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: 5
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: 30
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: 45
+				}
+			]
+		},
+		{
+			"question"		: {
+				"id"		: "001",
+				"title"		: "Coolest Spice Girl"
+				},
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: 12
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: 34
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: 76
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: 314
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: 15
+				}
+			]
+		},
+		{
+			"question"		: {
+				"id"		: "001",
+				"title"		: "Coolest Spice Girl"
+				},
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: 43
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: 25
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: 76
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: 15
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: 74
+				}
+			]
+		}
+	]
+
+}

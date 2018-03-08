@@ -1,0 +1,22 @@
+<!-- Question type is rank -->
+<div ng-if="question.type == 'rank'">
+  <div class="btn-group btn-group-toggle question-rank" data-toggle="buttons">
+    <label class="btn btn-secondary" ng-class="{active : (question.write-value == null)}">
+      <input type="radio" id="write-in" autocomplete="off" >None
+    </label>
+    <label class="btn btn-secondary" ng-repeat="i in rankOptions(question)" ng-class="{active : (i == question.write-value)}">
+      <input type="radio" id="write-in" autocomplete="off">{{i}}
+    </label>
+  </div>
+      <label for="write-in">Write in</label>
+</div>
+<!-- END -->
+
+<!-- Question type is select n -->
+<div class="form-check" ng-if="question.type != 'rank'">
+  <input class="form-check-input" type="checkbox"  id="write-in" ng-change="updateCount(question, question.write-value)" ng-model="question.write-value" ng-disabled="(question.count >= question.max) && question.write-value != true && question.max != false"/>
+  <label class="form-check-label" for="write-in">
+    Write in
+  </label>
+</div>
+<!-- END -->

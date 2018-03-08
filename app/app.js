@@ -31,6 +31,10 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
         controller: 'election',
         templateUrl: 'delete.html'
     })
+    .when('/edit/:electionId/poll/:pollId', {
+        controller: 'election',
+        templateUrl: 'edit.html'
+    })
     .when('/vote/:electionId', {
         controller: 'vote',
         templateUrl: 'vote.html'

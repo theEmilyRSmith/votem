@@ -1,0 +1,127 @@
+{
+	"title"			: "Cleveland Restaurant Week",
+	"description"	: "Its not just brats and beers",
+	"id"			: "002",
+	"ballot" 		:  [
+		{
+			"question"		: "Favorite cuisine",
+			"id"			: "006",
+			"type"			: "1",
+			"tagline"		: "Select your favorite type of cuisine.",
+			"description"	: "Select 1",
+			"write"			: false,
+			"max"			: 1,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Mexican",
+					"value"	: false
+				},
+				{
+					"name" 		: "Italian",
+					"value"	: false
+				},
+				{
+					"name" 		: "Greek",
+					"value"	: false
+				},
+				{
+					"name" 		: "German",
+					"value"	: false
+				},
+				{
+					"name" 		: "Chinese",
+					"value"	: false
+				}
+			]
+		},
+		{
+			"question"		: "Best Restaurant",
+			"id"			: "005",
+			"type"			: "rank",
+			"tagline"		: "Rank the best Cleveland restaurants in order of your favorite. 1 is best 5 is least favorable.",
+			"description"	: "Ranked choice voting",
+			"write"			: false,
+			"max"			: false,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Barrio",
+					"value"	: null
+				},
+				{
+					"name" 		: "The Melt",
+					"value"	: null
+				},
+				{
+					"name" 		: "Black Pig",
+					"value"	: null
+				},
+				{
+					"name" 		: "Punch Bowl Social",
+					"value"	: null
+				},
+				{
+					"name" 		: "Mabels BBQ",
+					"value"	: null
+				},
+				{
+					"name" 		: "Slymans Restaurant",
+					"value"	: null
+				},
+				{
+					"name" 		: "Bakersfield",
+					"value"	: null
+				},
+				{
+					"name" 		: "Townhall",
+					"value"	: null
+				}
+			]
+		},
+		{
+			"question"		: "Coolest atmosphere",
+			"id"			: "006",
+			"type"			: "n",
+			"tagline"		: "Which restaurts have your favorite ambience?",
+			"description"	: "Select any number",
+			"write"			: false,
+			"max"			: false,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Barrio",
+					"value"	: null
+				},
+				{
+					"name" 		: "The Melt",
+					"value"	: null
+				},
+				{
+					"name" 		: "Black Pig",
+					"value"	: null
+				},
+				{
+					"name" 		: "Punch Bowl Social",
+					"value"	: null
+				},
+				{
+					"name" 		: "Mabels BBQ",
+					"value"	: null
+				},
+				{
+					"name" 		: "Slymans Restaurant",
+					"value"	: null
+				},
+				{
+					"name" 		: "Bakersfield",
+					"value"	: null
+				},
+				{
+					"name" 		: "Townhall",
+					"value"	: null
+				}
+			]
+		}
+	]
+}

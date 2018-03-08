@@ -1,4 +1,4 @@
-<div header-vote></div>
+<div header></div>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
   <div class="row">
     <div class="col-10"><h2>{{election.title}}: {{election.description}}</h2></div>
@@ -15,7 +15,8 @@
             <div ng-repeat="answer in question.answers">
               <div ballot-question></div>
             </div>
+            <!--<div ng-if="question.write" ballot-question-write-in></div>-->
       </div> <!-- end card body -->
   </div> <!-- end question-->
 </main>
-<div footer-vote></div>
+<div footer></div>

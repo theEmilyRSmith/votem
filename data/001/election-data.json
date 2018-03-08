@@ -9,7 +9,7 @@
 			"type"			: "rank",
 			"tagline"		: "Rank spice girls in order of coolness, the coolest being ranked 1.",
 			"description"	: "Ranked choice voting",
-			"write"			: false,
+			"write"			: true,
 			"max"			: false,
 			"count"			: 0,
 			"answers"		: [
@@ -41,7 +41,7 @@
 			"type"			: "1",
 			"tagline"		: "Select the most talented spice girl",
 			"description"	: "Select 1",
-			"write"			: false,
+			"write"			: true,
 			"max"			: 1,
 			"count"			: 0,
 			"answers"		: [

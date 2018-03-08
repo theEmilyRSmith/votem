@@ -1,16 +1,11 @@
-app.directive('headerVote', function() {
-    return {
-      templateUrl: 'app/components/vote/views/header.html'
-    };
-});
-app.directive('footerVote', function() {
-    return { 
-      templateUrl: 'app/components/vote/views/footer.html'
-    };
-});
 app.directive('ballotQuestion', function() {
     return { 
       templateUrl: 'app/components/vote/views/ballot-question.html'
+    };
+});
+app.directive('ballotQuestionWriteIn', function() {
+    return { 
+      templateUrl: 'app/components/vote/views/ballot-question-write-in.html'
     };
 });
 app.directive('ballotSummary', function() {
@@ -18,14 +13,14 @@ app.directive('ballotSummary', function() {
       templateUrl: 'app/components/vote/views/ballot-summary.html'
     };
 });
-app.directive('headerAdmin', function() {
+app.directive('header', function() {
     return {
-      templateUrl: 'app/components/admin/views/header.html'
+      templateUrl: 'app/shared/header.html'
     };
 });
-app.directive('footerAdmin', function() {
+app.directive('footer', function() {
     return { 
-      templateUrl: 'app/components/admin/views/footer.html'
+      templateUrl: 'app/shared/footer.html'
     };
 });
 app.directive('addPoll', function() {

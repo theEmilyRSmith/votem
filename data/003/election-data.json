@@ -1,0 +1,79 @@
+{
+	"title"			: "Chief Woof Instigator",
+	"description"	: "Parties of Chihuahuas and Pomeranians",
+	"id"			: "003",
+	"ballot" 		:  [
+		{
+			"question"		: "Official Cat Inspecter",
+			"id"			: "007",
+			"type"			: "1",
+			"tagline"		: "Choose who will fill the post of Official Cat Inspecter of the Animal Threat department",
+			"description"	: "Select 1",
+			"write"			: false,
+			"max"			: 1,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Spotty the Dogue, Chihuahua party",
+					"value"	: false
+				},
+				{
+					"name" 		: "Sir Reginald Quentin, Pomeranian party",
+					"value"	: false
+				},
+				{
+					"name" 		: "Muttin McRescue, Independent party",
+					"value"	: false
+				}
+			]
+		},
+		{
+			"question"		: "Fecal Health Commission",
+			"id"			: "008",
+			"type"			: "3",
+			"tagline"		: "Select up to 3 new members of this important new initiative",
+			"description"	: "Select 3",
+			"write"			: false,
+			"max"			: 3,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Reina the Chihuahua",
+					"value"	: false
+				},
+				{
+					"name" 		: "Regan the Chihuahua",
+					"value"	: false
+				},
+				{
+					"name" 		: "Rowan the Pomeranian",
+					"value"	: false
+				},
+				{
+					"name" 		: "Reginald the Pomeranian",
+					"value"	: false
+				}
+			]
+		},
+		{
+			"question"		: "Important Doggie Issue X12042",
+			"id"			: "009",
+			"type"			: "1",
+			"tagline"		: "Select if you would like this issue to be implemented",
+			"description"	: "Select 1",
+			"write"			: false,
+			"max"			: 1,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Yes",
+					"value"	: false
+				},
+				{
+					"name" 		: "No",
+					"value"	: false
+				}
+			]
+		}
+	]
+}
