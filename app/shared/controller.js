@@ -79,7 +79,17 @@ app.controller('vote', function($scope, $http, $routeParams, $route) {
       return arr;
     }
     $scope.submitBallot= function() {
-      $scope.election.submitted = true;
+      var complete = true;
+      angular.forEach($scope.election.ballot, function(value, key) {
+        if(value.count == 0) {
+          complete = false;
+        }
+      });
+      if(complete) {
+        $scope.submitFinal();
+      }else {
+        $scope.election.submitted = true;
+      }
     }
 
     $scope.submitFinal = function() {
@@ -98,13 +108,16 @@ app.controller('vote', function($scope, $http, $routeParams, $route) {
       if(answer.value) {
         $scope.disabled[answer.value + question.question] = false;
         if(answer.value == i) {
+          question.count--;
           answer.value = null;
           $scope.disabled[i + question.question] = false;
         } else {
+          question.count++;
           answer.value = i;
           $scope.disabled[i + question.question] = true;
         }
       } else {
+        question.count++;
         answer.value = i;
         $scope.disabled[i + question.question] = true;
       }
