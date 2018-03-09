@@ -2,14 +2,23 @@
 	<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 	<div class="row">
 	  <div class="col-6"><h2>Add New Poll for {{election.title}} Election</h2></div>
-	  <div class="col-6">
+	  <div class="col-6" ng-if="submitted == false">
 	    <span class="float-right">
-	      <button type="button" class="btn btn-primary">Add poll</button> <a class="btn btn-secondary" role="button" href="#!ballot/{{election.id}}">Cancel</a>
+	      <button type="button" class="btn btn-primary" ng-click="addPoll()">Add poll</button> <a class="btn btn-secondary" role="button" href="#!ballot/{{election}}">Cancel</a>
+	    </span>
+	  </div>
+	  <div class="col-6" ng-if="submitted != false">
+	    <span class="float-right">
+	     <a class="btn btn-secondary" role="button" href="#!ballot/{{election}}">Back to Election</a>
 	    </span>
 	  </div>
 	</div>
 
-	<div add-poll></div>
-
+	<div ng-if="submitted == false" add-poll></div>
+	<div ng-if="submitted != false"> 
+		<div class="alert alert-success" role="alert">
+		  Your poll has been successfully created.
+		</div>
+	</div>
 	</main>
 <div footer></div>

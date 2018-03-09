@@ -123,3 +123,44 @@ app.controller('vote', function($scope, $http, $routeParams, $route) {
       }
     }
 });
+
+app.controller('poll', function($scope, $http, $routeParams, $route) {
+  $scope.show_admin = true;
+  $scope.election = $routeParams.electionId;
+  $scope.submitted = false;
+  $scope.poll = {
+      "election"    : $scope.election,
+      "question"    : null,
+      "id"          : null,
+      "type"        : null,
+      "tagline"     : null,
+      "description" : null,
+      "write"       : null,
+      "max"         : null,
+      "option"      : null,
+      "count"       : 0,
+      "answers"     : []
+  }
+
+  $scope.addOption = function() {
+    if($scope.poll.option != null) {
+      $scope.poll.answers.push($scope.poll.option);
+      $scope.poll.option = null;
+    }
+  }
+  $scope.removeOption = function(index){
+    $scope.poll.answers.splice(index, 1);
+  }
+  $scope.addPoll = function() {
+    //send poll object to backend
+    $scope.submitted = true;
+  }
+});
+app.controller('action', function($scope, $http, $routeParams, $route) {
+  $scope.show_admin = true;
+  $scope.submitted = false;
+
+  $scope.action = function() {
+    $scope.submitted = true;
+  }
+});

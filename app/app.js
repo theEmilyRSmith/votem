@@ -12,11 +12,11 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
         templateUrl: 'ballot.html'
     })
     .when('/election', {
-        controller: 'election',
+        controller: 'action',
         templateUrl: 'election.html'
     })
     .when('/poll/:electionId', {
-        controller: 'election',
+        controller: 'poll',
         templateUrl: 'poll.html'
     })
     .when('/results/:electionId', {
@@ -28,7 +28,7 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
         templateUrl: 'home.html'
     })
     .when('/delete/:electionId', {
-        controller: 'election',
+        controller: 'action',
         templateUrl: 'delete.html'
     })
     .when('/edit/:electionId/poll/:pollId', {
