@@ -1,64 +1,79 @@
 app.controller('admin', function($scope, $http, $routeParams, $route) {
 
-  //get data from "backend"
-   $http.get('data/election-array.json').
-	  then(function onSuccess(response) {
-	     $scope.elections = response.data;
-       $scope.show_admin = true;
-	  }).
-	  catch(function onError(response) {
-	   console.log(response);
-	  });
+  //get data from backend
+  $http.get('data/election-array.json').
+  then(function onSuccess(response) {
+     $scope.elections = response.data;
+     $scope.show_admin = true;
+  }).
+  catch(function onError(response) {
+   console.log(response);
+  });
 
 });
 app.controller('home', function($scope, $http, $routeParams, $route) {
 
-  //get data from "backend"
-   $http.get('data/election-array.json').
-    then(function onSuccess(response) {
-       $scope.elections = response.data;
-    }).
-    catch(function onError(response) {
-     console.log(response);
-    });
+  //get data from backend
+  $http.get('data/election-array.json').
+  then(function onSuccess(response) {
+     $scope.elections = response.data;
+  }).
+  catch(function onError(response) {
+   console.log(response);
+  });
 
 });
 app.controller('election', function($scope, $http, $routeParams, $route) {
-  //get data from "backend"
-   $http.get('data/' + $routeParams.electionId + '/election-data.json').
-	  then(function onSuccess(response) {
-	     $scope.election = response.data;
-       $scope.show_admin = true;
-	  }).
-	  catch(function onError(response) {
-	   console.log(response);
-	  });
+
+  //get data from backend
+  $http.get('data/' + $routeParams.electionId + '/election-data.json').
+  then(function onSuccess(response) {
+     $scope.election = response.data;
+     $scope.show_admin = true;
+  }).
+  catch(function onError(response) {
+   console.log(response);
+  });
 
 });
 
 app.controller('results', function($scope, $http, $routeParams, $route) {
-  //get data from "backend"
-   $http.get('data/' + $routeParams.electionId + '/results-data.json').
-	  then(function onSuccess(response) {
-	     $scope.results = response.data;
-       $scope.show_admin = true;
-	  }).
-	  catch(function onError(response) {
-	   console.log(response);
-	  });
+  
+  //get data from backend
+  $http.get('data/' + $routeParams.electionId + '/results-data.json').
+  then(function onSuccess(response) {
+     $scope.results = response.data;
+     $scope.show_admin = true;
+  }).
+  catch(function onError(response) {
+    //send this log to the backend
+    console.log(response);
+  });
 
 });
 
 app.controller('vote', function($scope, $http, $routeParams, $route) {
-    //get data from "backend"
-     $http.get('data/' + $routeParams.electionId + '/election-data.json').
-      then(function onSuccess(response) {
-        $scope.election = response.data;
-        $scope.show_summary = true;
-      }).
-      catch(function onError(response) {
-       console.log(response);
-      });
+    $scope.disabled = {};
+
+    //get data from backend
+    $http.get('data/' + $routeParams.electionId + '/election-data.json').
+    then(function onSuccess(response) {
+      $scope.election = response.data;
+      $scope.show_summary = true;
+    }).
+    catch(function onError(response) {
+      //send this log to the backend
+      console.log(response);
+    });
+
+    //send data to backend
+    $scope.submitBallot= function() {
+      //error check
+
+      //call to submit $scope.election object to server with user data
+
+      //redirect
+    }
 
     //helper functions
     $scope.updateCount= function(question,value) {
@@ -66,20 +81,29 @@ app.controller('vote', function($scope, $http, $routeParams, $route) {
     }
 
     $scope.rankOptions= function(question) {
-      var len = question.answers.length;
       var arr = [];
-      for(var i = 1; i <= len; i++) {
+      for(var i = 1; i <=  question.answers.length; i++) {
           arr.push(i);
       } 
       return arr;
     }
+    $scope.restrictOptions = function(question, answer) {
+      return ((question.count >= question.max) && answer.value != true && question.max != false);
+    }
 
-    $scope.optionTaken = function(i, answer, answers) {
-      angular.forEach(answers, function(value, key) {
-        if((value.value == i) && value.name != answer.name) { 
-          return true;
+    $scope.rankUpdate = function(i, answer, question) {
+      if(answer.value) {
+        $scope.disabled[answer.value + question.question] = false;
+        if(answer.value == i) {
+          answer.value = null;
+          $scope.disabled[i + question.question] = false;
+        } else {
+          answer.value = i;
+          $scope.disabled[i + question.question] = true;
         }
-      });
-      return false;
+      } else {
+        answer.value = i;
+        $scope.disabled[i + question.question] = true;
+      }
     }
 });

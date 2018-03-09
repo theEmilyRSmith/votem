@@ -12,6 +12,9 @@
       <h4 class="card-header">{{question.question}}</h4>
       <div class="card-body">
           <p><i>{{question.description}}</i> <br/>{{question.tagline}}</p>
+          <!--<div ng-if="question.type == 'rank'">
+            <span>Most cool</span>  <i class="fas fa-long-arrow-alt-right"></i>  <span>Least Cool</span>
+          </div>-->
             <div ng-repeat="answer in question.answers">
               <div ballot-question></div>
             </div>

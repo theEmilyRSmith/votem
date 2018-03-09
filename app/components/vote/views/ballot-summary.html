@@ -1,7 +1,9 @@
 <h5>Review selections</h3>
-<div ng-repeat="question in election.ballot">
+<div ng-repeat="question in election.ballot" class="ballot-summary">
 <b>{{question.question}}</b>
   <div ng-repeat="answer in question.answers" ng-if="answer.value">
-        {{answer.name}}<span ng-if="answer.value != true">, {{answer.value}}</span>
+        {{answer.name}}<span ng-if="answer.value !== true">: Rank {{answer.value}}</span>
     </div>
 </div>
+<hr/>
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="submitBallot()">Submit Ballot</button>

@@ -130,6 +130,38 @@
 					"value"	: false
 				}
 			]
+		},
+		{
+			"question"		: "Most famous spice girl",
+			"id"			: "012",
+			"type"			: "rank",
+			"tagline"		: "Rank spice girls in order of famousness, the most famous being ranked 1.",
+			"description"	: "Ranked choice voting",
+			"write"			: true,
+			"max"			: false,
+			"count"			: 0,
+			"answers"		: [
+				{
+					"name" 		: "Sporty",
+					"value"	: null
+				},
+				{
+					"name" 		: "Scary",
+					"value"	: null
+				},
+				{
+					"name" 		: "Baby",
+					"value"	: null
+				},
+				{
+					"name" 		: "Ginger",
+					"value"	: null
+				},
+				{
+					"name" 		: "Posh",
+					"value"	: null
+				}
+			]
 		}
 	]
 }

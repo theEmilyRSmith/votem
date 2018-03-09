@@ -1,22 +1,22 @@
 <!-- Question type is rank -->
 <div ng-if="question.type == 'rank'">
+<label class="label-question-rank" for="{{answer.name}}">{{answer.name}}</label>
   <div class="btn-group btn-group-toggle question-rank" data-toggle="buttons">
-    <label class="btn btn-primary" ng-class="{'btn-primary': (answer.value == null), 'btn-secondary': (answer.value != null)}">
-      <input type="radio" name="options" autocomplete="off" ng-click="answer.value = null">None
+    <label class="btn btn-lg btn-question-rank" ng-class="{'btn-primary': (answer.value == null), 'btn-secondary': (answer.value != null)}">
+      <input type="radio" name="options" autocomplete="off" ng-click="rankUpdate(null, answer, question)">None
     </label>
-    <label class="btn btn-secondary" ng-repeat="i in rankOptions(question)" ng-class="{'btn-primary': (i == answer.value), 'btn-secondary': (i != answer.value)}">
-      <input type="radio" name="options" autocomplete="off" ng-click="answer.value = i">{{i}}
+    <label class="btn btn-lg btn-question-rank" ng-repeat="i in rankOptions(question)" ng-class="{'btn-primary': (i == answer.value), 'btn-secondary': (i != answer.value), 'disabled' : ((disabled[i+question.question] === true) && answer.value != i)}">
+      <input type="radio" name="options" autocomplete="off" ng-click="rankUpdate(i, answer, question)" ng-disabled="((disabled[i+question.question] === true) && answer.value != i)">{{i}}
     </label>
   </div>
-      <label for="{{answer.name}}">{{answer.name}}</label>
 </div>
 <!-- END -->
 
 <!-- Question type is select n -->
-<div class="form-check" ng-if="question.type != 'rank'">
-  <input class="form-check-input" type="checkbox"  id="{{answer.name}}" ng-change="updateCount(question, answer.value)" ng-model="answer.value" ng-disabled="(question.count >= question.max) && answer.value != true && question.max != false"/>
-  <label class="form-check-label" for="defaultCheck1">
-    {{answer.name}}
+<div class="btn-group-toggle" data-toggle="buttons" ng-if="question.type != 'rank'">
+  <label class="btn btn-lg btn-question-checkbox" ng-class="{'btn-primary': (answer.value == true), 'btn-secondary': (answer.value != true), 'disabled' : (restrictOptions(question, answer))}">
+  <input class="form-check-input" type="checkbox"  id="{{answer.name}}" ng-change="updateCount(question, answer.value)" ng-model="answer.value" 
+  ng-disabled="restrictOptions(question, answer)"/> <i ng-if="answer.value == true" class="fas fa-check-circle"></i> {{answer.name}}
   </label>
 </div>
 <!-- END -->

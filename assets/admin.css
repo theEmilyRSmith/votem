@@ -84,22 +84,38 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
-
-.question {
-  margin: 10px 0px;
-}
-.footer-container {
-  padding-top:20px; 
-}
-.question-rank {
-  margin: 5px 0px;
-}
-.side-summary {
-  padding: 15px;
-}
 /*
  * Utilities
  */
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+/*
+ * Voting interface
+ */
+
+.question-rank {
+  margin: 5px 0px 0px;
+}
+.btn-question-rank {
+  min-width:70px;
+  /*margin:0px 5px; */
+}
+.side-summary {
+  padding: 15px;
+}
+.btn-question-checkbox {
+  min-width: 450px;
+  text-align: left;
+  padding-left: 20px;
+  margin: 5px 0px;
+}
+.label-question-rank {
+  width:200px;
+  font-size: 1.25rem;
+  vertical-align: bottom;
+}
+.ballot-summary {
+  font-size: 1rem;
+}
