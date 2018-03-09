@@ -1,42 +1,42 @@
-var app = angular.module('voteApp', ['ngRoute']);
+var app = angular.module('voteApp', ['ngRoute', 'ngSanitize']);
 
 app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
 
     $routeProvider
 	.when('/admin', {
         controller: 'admin',
-        templateUrl: 'admin.html'
+        templateUrl: 'app/views/admin.html'
     })
     .when('/ballot/:electionId', {
         controller: 'election',
-        templateUrl: 'ballot.html'
+        templateUrl: 'app/views/ballot.html'
     })
     .when('/election', {
         controller: 'action',
-        templateUrl: 'election.html'
+        templateUrl: 'app/views/election.html'
     })
     .when('/poll/:electionId', {
         controller: 'poll',
-        templateUrl: 'poll.html'
+        templateUrl: 'app/views/poll.html'
     })
     .when('/results/:electionId', {
         controller: 'results',
-        templateUrl: 'results.html'
+        templateUrl: 'app/views/results.html'
     })
     .when('/home', {
         controller: 'home',
-        templateUrl: 'home.html'
+        templateUrl: 'app/views/home.html'
     })
     .when('/delete/:electionId', {
         controller: 'action',
-        templateUrl: 'delete.html'
+        templateUrl: 'app/views/delete.html'
     })
     .when('/edit/:electionId/poll/:pollId', {
         controller: 'election',
-        templateUrl: 'edit.html'
+        templateUrl: 'app/views/edit.html'
     })
     .when('/vote/:electionId', {
         controller: 'vote',
-        templateUrl: 'vote.html'
+        templateUrl: 'app/views/vote.html'
     });
 }]);
