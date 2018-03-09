@@ -6,4 +6,9 @@
     </div>
 </div>
 <hr/>
-<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="submitBallot()">Submit Ballot</button>
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="submitBallot()" ng-if="election.submitted !== true ">Submit Ballot</button>
+<div class="alert alert-danger" role="alert" ng-if="(election.submitted == true)">
+	You have not answered all of the polls, are you sure you want to submit?
+</div>
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-if="(election.submitted == true)" ng-click="submitFinal()">Yes, Submit</button>
+<button type="button" class="btn btn-secondary btn-lg btn-block" ng-if="(election.submitted == true)" ng-click="election.submitted = false">No, I'll modify my ballot</button>

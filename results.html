@@ -1,6 +1,13 @@
 <div header></div>
   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-    <h2>View Results for {{results.election.title}} Election</h2>
+    <div class="row">
+        <div class="col-8"><h2>View Results for {{results.election.title}} Election <span class="badge badge-primary"># of Ballots: {{results.election.count}}</span></h2></div>
+        <div class="col-4">
+          <span class="float-right">
+            <a class="btn btn-primary" role="button" href="">Export to PDF</a> <a class="btn btn-secondary" role="button" href="">Export to CSV</a>
+          </span>
+        </div>
+    </div>
     <div ng-repeat="result in results.results">
     <h4>{{result.question.title}}</h4>
         <table class="table">
@@ -8,14 +15,16 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Answer</th>
-              <th scope="col">Result</th>
+              <th scope="col">Total</th>
+              <th scope="col">Percent <span class="float-right"><span class="badge badge-primary vote-total"># of votes: {{result.question.votes}}</span></span></th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="answer in result.answers">
               <th scope="row">{{$index+1}}</th>
-              <td>{{answer.name}}</td>
+              <td><span class="winner-star" ng-if="result.question.winner == answer.name"><i class="fas fa-star"></i></span>{{answer.name}}</td>
               <td>{{answer.value}}</td>
+              <td>{{answer.avg}}</td>
             </tr>
           </tbody>
         </table>

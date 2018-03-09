@@ -66,15 +66,6 @@ app.controller('vote', function($scope, $http, $routeParams, $route) {
       console.log(response);
     });
 
-    //send data to backend
-    $scope.submitBallot= function() {
-      //error check
-
-      //call to submit $scope.election object to server with user data
-
-      //redirect
-    }
-
     //helper functions
     $scope.updateCount= function(question,value) {
       question.count += value == true ? 1 : -1;
@@ -86,6 +77,18 @@ app.controller('vote', function($scope, $http, $routeParams, $route) {
           arr.push(i);
       } 
       return arr;
+    }
+    $scope.submitBallot= function() {
+      $scope.election.submitted = true;
+    }
+
+    $scope.submitFinal = function() {
+      $scope.election.complete = true;
+      $scope.show_summary = false;
+    }
+
+    $scope.showMaxed = function(question) {
+      return ((question.count >= question.max) && question.max != false);
     }
     $scope.restrictOptions = function(question, answer) {
       return ((question.count >= question.max) && answer.value != true && question.max != false);

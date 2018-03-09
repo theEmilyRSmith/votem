@@ -1,25 +1,34 @@
 <div header></div>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-  <div class="row">
-    <div class="col-10"><h2>{{election.title}}: {{election.description}}</h2></div>
-    <div class="col-2">
-      <span class="float-right">
-        <button type="button" class="btn btn-secondary">Need help?</button>
-      </span>
+  <div ng-if="election.complete != true">
+    <div class="row">
+      <div class="col-10"><h2>{{election.title}}: {{election.description}}</h2></div>
+      <div class="col-2">
+        <span class="float-right">
+          <button type="button" class="btn btn-secondary">Need help?</button>
+        </span>
+      </div>
+    </div>
+    <div class="card question" ng-repeat="question in election.ballot">
+        <h4 class="card-header">{{question.question}}</h4>
+        <div class="card-body">
+            <p><i>{{question.description}}</i> <br/>{{question.tagline}}</p>
+              <div ng-repeat="answer in question.answers">
+                <div ballot-question></div>
+              </div>
+              <div class="alert alert-primary" role="alert" ng-if="showMaxed(question)">
+                You have chosen the max amount of selections. If you would like to change a selection, please deselect an existing choice.
+              </div>
+              <div class="alert alert-danger" role="alert" ng-if="(question.count == 0 && election.submitted == true)">
+                You have not made a selection.
+              </div>
+        </div> <!-- end card body -->
+    </div> <!-- end question-->
+  </div>
+  <div ng-if="election.complete == true">
+    <div class="alert alert-success" role="alert">
+      We have successfully received your ballot.
     </div>
   </div>
-  <div class="card question" ng-repeat="question in election.ballot">
-      <h4 class="card-header">{{question.question}}</h4>
-      <div class="card-body">
-          <p><i>{{question.description}}</i> <br/>{{question.tagline}}</p>
-          <!--<div ng-if="question.type == 'rank'">
-            <span>Most cool</span>  <i class="fas fa-long-arrow-alt-right"></i>  <span>Least Cool</span>
-          </div>-->
-            <div ng-repeat="answer in question.answers">
-              <div ballot-question></div>
-            </div>
-            <!--<div ng-if="question.write" ballot-question-write-in></div>-->
-      </div> <!-- end card body -->
-  </div> <!-- end question-->
 </main>
 <div footer></div>
