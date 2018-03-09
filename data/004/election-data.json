@@ -10,7 +10,7 @@
 			"tagline"		: "",
 			"description"	: "Select 1",
 			"write"			: false,
-			"max"			: false,
+			"max"			: 1,
 			"count"			: 0,
 			"answers"		: [
 				{
